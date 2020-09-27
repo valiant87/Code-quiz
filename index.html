@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Native CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Bootstrap timer & navbar component -->
+    <main class="container mt-5 pt-3">
+        <a class="nav-link disabled" id="timer" tabindex="-1" aria-disabled="true">Timer: 60</a>
+        <div id="questionnare" class="jumbotron">
+            <h1>Coding Quiz</h1>
+            <div id="questions-container" class=""></div>
+            <hr class="my-4">
+            <div id="questions" classs="">Questions</div>
+            <hr class="my-4">
+            <div id="answers" class="">Answers</div>
+            <hr class="my-4">
+            <button type="button" class="btn btn-primary" id="start" onclick="startQuiz()">Start</button>
+        </div>
+    </main>
+    <!-- JS script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
