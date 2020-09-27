@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+    color: #4285f5;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#timer {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#questions,
+#answers {
+    color: #4285f5;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn {
+    background-color: #4285f5;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
