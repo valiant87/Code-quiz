@@ -5,13 +5,25 @@
 /*5.Set up many questions so the user can accumulate 
 as many points as faireness of the game alows to*/
 
-// Getting the variables
+// Getting the variables,transversing the DOM
 var timeEL = document.getElementById("timer");
 var questionsEL = document.getElementById("questions");
 var answersEL = document.getElementById("answers");
+var correctEL = document.getElementById("correct");
+var wrongEL = document.getElementById("wrong");
+// scores
+var initialsEL = document.getElementById("initials");
+var userScore = document.getElementById("user-score");
+var userImput = document.getElementById("user-imput");
+var initialBtn = document.getElementById("initial-button");
+var scoreCard = document.getElementById("score-card");
+var highScore = document.getElementById("highscore");
 var time = 60;
 var countDown;
 
+var gameScore = 0;
+//
+var playerHistory = JSON.parse(window.localStorage.getItem("localscore")) || [];
 // Current index
 var currentIndex = 0;
 
@@ -52,12 +64,12 @@ var questions = [{
     correct: 'True'
 }, {
     // Q 8
-    question: 'Answer this logic: 88 === "88" ',
+    question: 'Answer this logic: 55 === "55" ',
     answer: ['True', 'False'],
     correct: 'False'
 }, {
     // Q 9
-    question: 'Answer this logic: 88 !== "88" ',
+    question: 'Answer this logic: 33 !== "33" ',
     answer: ['True', 'False'],
     correct: 'True'
 
@@ -73,9 +85,23 @@ function timer() {
         timeIsUp();
     }
 }
-
+//time function***
 function timeIsUp() {
     clearInterval(countDown);
+    userImput.classList.remove("hidden");
+    scoreCard.classList.remove("hidden");
+    userScore.textContent = gameScore;
+}
+
+function gamerimput() {
+    var player = initialsEL.value;
+    var newScore = {
+        player: player,
+        score: gameScore
+    };
+    playerHistory.push(newScore);
+    window.localStorage.setItem("localscore", JSON.stringify(playerHistory));
+
 }
 
 function startQuiz() {
@@ -97,15 +123,26 @@ function nextQuestion() {
         answersEL.append(button);
     }
 }
-
+//This function will alert when the answers are correct or wrong
 function answer() {
     if (this.value === questions[currentIndex].correct) {
-        // user notifications
-        alert("Correct!"); //change this
+
+        gameScore += 5;
+        correctEL.classList.remove("hidden");
+        setTimeout(function() {
+            correctEL.classList.add("hidden")
+
+        }, 1000)
+
     } else {
         time -= 5;
         timeEL.textContent = time;
-        alert("Wrong"); //this needs to change
+
+        wrongEL.classList.remove("hidden");
+        setTimeout(function() {
+            wrongEL.classList.add("hidden")
+
+        }, 1000)
     }
     currentIndex++;
     if (currentIndex === questions.length) {
@@ -114,3 +151,11 @@ function answer() {
         nextQuestion();
     }
 }
+
+
+// Alert the user with a banner-
+// Local storage
+// Score card
+// Go back button to take the quiz again
+// Dysplay score in a table
+// View score

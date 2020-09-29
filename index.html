@@ -16,7 +16,7 @@
 <body>
     <!-- Bootstrap timer & navbar component -->
     <main class="container mt-5 pt-3">
-        <div><span id="timer">You have 60 Seconds</span></div>
+        <span id="timer">You have 60 Seconds</span>
         <div id="questionnare" class="jumbotron">
             <h1>JavaScript Fundamentals Quiz</h1>
             <div id="questions-container" class=""></div>
@@ -26,8 +26,20 @@
             <div id="answers" class="giveanswers">Correct answers adds +5 points.Incorect once substract -5 seconds.</div>
             <hr class="my-4">
             <button type="button" class="btn btn-primary" id="start" onclick="startQuiz()">Start</button>
-            <div class="p-3 mb-2 bg-success text-white">Correct!</div>
-            <div class="p-3 mb-2 bg-danger text-white">Wrong!</div>
+        </div>
+        <div class="mb-1 p-1 bg-success text-white hidden" id="correct">Correct!</div>
+        <div class="hidden" id="user-imput">
+            <h3>Your Score is <span id="user-score"></span></h3>
+            <div class="input-group mb-3">
+                <input type="text" id="initials" class="form-control" placeholder="Innitials">
+                <div class="input-group-append">
+                    <span class="input-group-text" onclick="gamerimput()" id="initial-button">Submit</span>
+                </div>
+            </div>
+        </div>
+        <div class="mb-1 p-1 bg-danger text-white hidden" id="wrong">Wrong!</div>
+        <div class="card hidden" id="score-card">
+            <div class="card-body" id="highscore"></div>
         </div>
     </main>
     <!-- JS script -->
