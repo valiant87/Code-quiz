@@ -17,8 +17,8 @@ Do not forget to submit your innitials at the end.
 ---
 #### Project: https://valiant87.github.io/Code-quiz/
 
-![Project](code-quiz/jsquiz.png)
-![Score](code-quiz/score.png)
+![Project](jsquiz.png)
+![Score](score.png)
 
 ---
 #### User Manual
