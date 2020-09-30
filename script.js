@@ -108,8 +108,7 @@ function startQuiz() {
     countDown = setInterval(timer, 1000);
     nextQuestion();
 }
-// questions answers
-
+// Transversing the DOM
 function nextQuestion() {
     var currentQuestion = questions[currentIndex].question;
     questionsEL.textContent = currentQuestion;
@@ -127,7 +126,7 @@ function nextQuestion() {
 function answer() {
     if (this.value === questions[currentIndex].correct) {
 
-        gameScore += 5;
+        gameScore += 11;
         correctEL.classList.remove("hidden");
         setTimeout(function() {
             correctEL.classList.add("hidden")
@@ -153,9 +152,13 @@ function answer() {
 }
 
 
-// Alert the user with a banner-
+playerDashboard();
+
+
+// Alert the user with a banner
 // Local storage
 // Score card
 // Go back button to take the quiz again
 // Dysplay score in a table
 // View score
+// To be continued...
