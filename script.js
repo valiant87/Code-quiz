@@ -11,7 +11,7 @@ var questionsEL = document.getElementById("questions");
 var answersEL = document.getElementById("answers");
 var correctEL = document.getElementById("correct");
 var wrongEL = document.getElementById("wrong");
-// scores
+// scores variables
 var initialsEL = document.getElementById("initials");
 var userScore = document.getElementById("user-score");
 var userImput = document.getElementById("user-imput");
@@ -151,9 +151,16 @@ function answer() {
     }
 }
 
-
 playerDashboard();
 
+// Try angain button
+
+var tryAgain = document.querySelector("#try-again");
+tryAgainBtn.addEventListener("click", function() {
+
+
+
+});
 
 // Alert the user with a banner
 // Local storage
