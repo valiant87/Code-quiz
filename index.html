@@ -23,7 +23,7 @@
             <hr class="my-4">
             <div id="questions" classs="askquestios">Choose the correct answers</div>
             <hr class="my-4">
-            <div id="answers" class="giveanswers">Correct answers adds points.Incorect once substract -5 seconds.</div>
+            <div id="answers" class="giveanswers">Correct answers adds 11 points.Incorect once substract -5 seconds.</div>
             <hr class="my-4">
             <button type="button" class="btn btn-primary" id="start" onclick="startQuiz()">Start</button>
         </div>
@@ -34,14 +34,18 @@
                 <input type="text" id="initials" class="form-control" placeholder="Initials">
                 <div class="input-group-append">
                     <span class="input-group-text" onclick="gamerimput()" id="initial-button">Submit</span>
+
                 </div>
             </div>
+            <div id="highScores"></div>
         </div>
         <div class="mb-1 p-1 bg-danger text-white hidden" id="wrong">Wrong!</div>
         <div class="card hidden" id="score-card">
+            <button class="btn btn-primary" onclick="clear()" id="clear-score">Clear Score</button>
+            <button class="btn btn-primary" onclick="refresh()" id="try-again">Try Again</button>
 
-            <button class="btn btn-primary" onclick="tryagain()" id="try-again">Try Again</button>
         </div>
+
     </main>
     <!-- JS script -->
     <script src="script.js"></script>

@@ -85,7 +85,7 @@ function timer() {
         timeIsUp();
     }
 }
-//time function***
+//Time function
 function timeIsUp() {
     clearInterval(countDown);
     userImput.classList.remove("hidden");
@@ -101,7 +101,15 @@ function gamerimput() {
     };
     playerHistory.push(newScore);
     window.localStorage.setItem("localscore", JSON.stringify(playerHistory));
-
+    //Called the var name
+    initialsEL.value = "";
+    // Updating UI with scores adn initials
+    for (var i = 0; i < playerHistory.length; i++) {
+        var highScoresEL = document.getElementById("highScores");
+        var scoreNode = document.createElement("p");
+        scoreNode.textContent = playerHistory[i].player + " " + playerHistory[i].score;
+        highScoresEL.appendChild(scoreNode);
+    }
 }
 
 function startQuiz() {
@@ -151,16 +159,20 @@ function answer() {
     }
 }
 
-playerDashboard();
-
-// Try angain button
-
-var tryAgain = document.querySelector("#try-again");
-tryAgainBtn.addEventListener("click", function() {
+// playerDashboard();
 
 
 
-});
+// Try angain button function refresh()
+function refresh() {
+    location.reload();
+}
+// Clear scores function
+// remove getItem. setItem. getItem(personal notes)
+function clear() {
+    window.localStorage.removeItem("localscore");
+    refresh();
+}
 
 // Alert the user with a banner
 // Local storage
@@ -168,4 +180,3 @@ tryAgainBtn.addEventListener("click", function() {
 // Go back button to take the quiz again
 // Dysplay score in a table
 // View score
-// To be continued...
