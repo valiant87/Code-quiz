@@ -106,7 +106,7 @@ function gamerimput() {
     // Updating UI with scores adn initials
     for (var i = 0; i < playerHistory.length; i++) {
         var highScoresEL = document.getElementById("highScores");
-        var scoreNode = document.createElement("p");
+        var scoreNode = document.createElement("li");
         scoreNode.textContent = playerHistory[i].player + " " + playerHistory[i].score;
         highScoresEL.appendChild(scoreNode);
     }
@@ -162,18 +162,22 @@ function answer() {
 // playerDashboard();
 
 
+// Clear scores function
+// remove getItem. setItem. getItem(personal notes)
+var clearScore = document.getElementById("clear-score");
+clearScore.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.localStorage.clear(); //major problem .clear() code conflict
+});
+// function clear() {
+// window.localStorage.clear();
+
+// }
 
 // Try angain button function refresh()
 function refresh() {
     location.reload();
 }
-// Clear scores function
-// remove getItem. setItem. getItem(personal notes)
-function clear() {
-    window.localStorage.removeItem("localscore");
-    refresh();
-}
-
 // Alert the user with a banner
 // Local storage
 // Score card
