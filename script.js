@@ -76,6 +76,7 @@ var questions = [{
 }];
 
 // Setting up the clock function
+// when time is up questions tops(no options)
 function timer() {
     time--;
     timeEL.textContent = time;
@@ -88,9 +89,14 @@ function timer() {
 //Time function
 function timeIsUp() {
     clearInterval(countDown);
+    // this will stop the user from choosing 
+    questionsEL.classList.add("hidden");
+    answersEL.classList.add("hidden");
+
     userImput.classList.remove("hidden");
     scoreCard.classList.remove("hidden");
     userScore.textContent = gameScore;
+
 }
 
 function gamerimput() {
@@ -159,28 +165,17 @@ function answer() {
     }
 }
 
-// playerDashboard();
-
-
 // Clear scores function
 // remove getItem. setItem. getItem(personal notes)
 var clearScore = document.getElementById("clear-score");
 clearScore.addEventListener("click", function(event) {
     event.preventDefault();
-    window.localStorage.clear(); //major problem .clear() code conflict
+    window.localStorage.clear();
 });
-// function clear() {
-// window.localStorage.clear();
 
-// }
+
 
 // Try angain button function refresh()
 function refresh() {
     location.reload();
 }
-// Alert the user with a banner
-// Local storage
-// Score card
-// Go back button to take the quiz again
-// Dysplay score in a table
-// View score
